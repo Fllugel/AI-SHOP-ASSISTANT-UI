@@ -1,58 +1,37 @@
 <template>
-  <div class="flex flex-col h-screen w-full p-2 bg-black">
-    <!-- Inner Padding Wrapper -->
-    <div class="flex flex-col h-full border border-white rounded-lg bg-black dark:text-white">
-      <!-- Chat Messages Display -->
-      <div class="flex-1 overflow-y-auto space-y-4 bg-black rounded-t-lg">
-        <div
-            v-for="(message, index) in messages"
-            :key="index"
-            class="flex p-3"
-            :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
-        >
-          <div
-              class="p-3 max-w-xs text-sm border border-white font-bold rounded-lg"
-              :class="(message.role === 'user' || message.role === 'echo')
-              ? 'bg-black text-white'
-              : 'bg-black text-white'"
-          >
-            <p>{{ message.text }}</p>
-          </div>
-        </div>
-      </div>
+  <div class="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4">
+    <!-- Header Section -->
+    <header class="text-center mb-10">
+      <h1 class="text-5xl font-bold mb-4">Welcome to Store ChatBot</h1>
+      <p class="text-xl">
+        Experience a smarter way to shop with our intuitive and friendly chatbot!
+      </p>
+    </header>
 
-      <!-- Message Input Field -->
-      <div class="border-t border-white p-4 bg-black rounded-b-lg">
-        <form @submit.prevent="sendMessage" class="flex">
-          <Input
-              v-model="userInput"
-              placeholder="Type your message..."
-              class="flex-1 mr-2 bg-black text-white border border-white placeholder-white rounded-lg p-2"
-          />
-          <Button type="submit" variant="default" class="border-white rounded-lg p-2">Send</Button>
-        </form>
-      </div>
-    </div>
+    <!-- Main Content Section -->
+    <section class="max-w-2xl w-full p-8 bg-gray-800 rounded-lg shadow-xl">
+      <p class="text-lg leading-relaxed">
+        Our Store ChatBot is designed to help you navigate our collection effortlessly,
+        offer personalized recommendations, and keep you updated on the latest deals.
+        Whether you are looking for the perfect gift or simply exploring our exclusive collection,
+        our chatbot is here to ensure your shopping experience is seamless and enjoyable.
+      </p>
+      <p class="mt-6 text-lg leading-relaxed">
+        Dive in and start a conversation with our chatbot to discover unique offers,
+        get expert advice, and enjoy a tailored shopping journey – all at your fingertips.
+      </p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="mt-10">
+      <p class="text-sm text-gray-400">
+        Crafted with passion by the Store ChatBot Team.
+      </p>
+    </footer>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
-const messages = ref([])
-const userInput = ref('')
-
-async function sendMessage() {
-  if (!userInput.value.trim()) return
-
-  // Add the user's message (aligned to the right)
-  messages.value.push({ text: userInput.value, role: 'user' })
-
-  // Simulate an echo response (using the same style as the user, but aligned to the left)
-  const simulatedResponse = `Echo: ${userInput.value}`
-  messages.value.push({ text: simulatedResponse, role: 'echo' })
-
-  // Clear the input
-  userInput.value = ''
-}
 </script>
+
