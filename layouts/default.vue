@@ -1,7 +1,7 @@
 <template>
   <div class="flex bg-white text-black dark:bg-black dark:text-white">
     <SidebarProvider>
-      <Sidebar class="border-r-4 border-black dark:border-white flex flex-col justify-between">
+      <Sidebar class="flex border-black dark:border-white flex-col">
         <div>
           <SidebarHeader class="flex items-center flex-row justify-center border-b-2 border-black dark:border-white">
             <component :is="AcademicCapIcon" class="mr-2 h-5 w-5" />
