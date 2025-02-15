@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col p-3 h-screen w-full bg-black">
+  <div class="flex flex-col p-3 h-screen w-full bg-white text-black dark:bg-black dark:text-white">
     <!-- Inner Padding Wrapper -->
-    <div class="flex flex-col h-full border border-white rounded-lg bg-black dark:text-white">
+    <div class="flex flex-col h-full border border-black dark:border-white rounded-lg bg-white dark:bg-black">
       <!-- Chat Messages Display -->
-      <div class="flex-1 overflow-y-auto space-y-4 bg-black rounded-t-lg">
+      <div class="flex-1 overflow-y-auto space-y-4 bg-white dark:bg-black rounded-t-lg">
         <div
             v-for="(message, index) in messages"
             :key="index"
@@ -11,10 +11,10 @@
             :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
         >
           <div
-              class="p-3 max-w-xs text-xl border border-white font-bold rounded-lg"
+              class="p-3 max-w-xs text-xl border border-black dark:border-white font-bold rounded-lg"
               :class="(message.role === 'user' || message.role === 'echo')
-              ? 'bg-black text-white'
-              : 'bg-black text-white'"
+              ? 'bg-white dark:bg-black text-black dark:text-white'
+              : 'bg-white dark:bg-black text-black dark:text-white'"
           >
             <p>{{ message.text }}</p>
           </div>
@@ -22,14 +22,14 @@
       </div>
 
       <!-- Message Input Field -->
-      <div class="border-t border-white p-4 bg-black rounded-b-lg">
+      <div class="border-t border-black dark:border-white p-4 bg-white dark:bg-black rounded-b-lg">
         <form @submit.prevent="sendMessage" class="flex">
           <Input
               v-model="userInput"
               placeholder="Type your message..."
-              class="flex-1 mr-2 bg-black text-white border border-white placeholder-white rounded-lg text-xl p-2 placeholder:text-xl"
+              class="flex-1 mr-2 bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white placeholder-black dark:placeholder-white rounded-lg text-xl p-2 placeholder:text-xl"
           />
-          <Button type="submit" variant="default" class="border-white rounded-lg p-2 h-full">Send</Button>
+          <Button type="submit" variant="default" class="border-black dark:border-white rounded-lg p-2 h-full">Send</Button>
         </form>
       </div>
     </div>
