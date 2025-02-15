@@ -1,5 +1,7 @@
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+  <html lang="en" class="dark">
+    <div>
+      <NuxtPage />
+    </div>
+  </html>
 </template>
