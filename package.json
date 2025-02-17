@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "nuxt generate && type nul > .output/public/.nojekyll && gh-pages --dotfiles -d .output/public\n"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -21,7 +22,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.475.0",
-    "nuxt": "^3.15.4",
+    "nuxt": "^3.6.0",
     "radix-vue": "^1.9.14",
     "shadcn-nuxt": "^0.11.3",
     "tailwind-merge": "^3.0.1",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.5.2",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.7.3"
   }
 }
