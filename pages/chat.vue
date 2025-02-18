@@ -11,7 +11,7 @@
             :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
         >
           <div
-              class="p-3 max-w-xs text-2xl border-2 border-white font-bold rounded-lg bg-black text-white"
+              class="p-3 max-w-xl text-lg border-2 border-white font-bold rounded-lg bg-black text-white break-words"
           >
             <p>{{ message.text }}</p>
           </div>
