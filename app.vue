@@ -1,5 +1,5 @@
 <template>
-  <html lang="en">
+  <html lang="en" class="dark">
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -7,7 +7,4 @@
 </template>
 
 <script setup>
-onMounted(() => {
-  document.documentElement.classList.add('dark')
-})
 </script>
