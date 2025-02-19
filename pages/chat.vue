@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col p-3 h-screen w-full bg-black text-white">
-    <!-- Inner Padding Wrapper -->
+    <!-- Chat Container -->
     <div class="flex flex-col h-full border-2 border-white rounded-lg bg-black">
-      <!-- Chat Messages Display -->
-      <div class="flex-1 overflow-y-auto space-y-4 bg-black rounded-t-lg">
+      <!-- Chat Messages -->
+      <div ref="chatContainer" class="flex-1 overflow-y-auto space-y-4 bg-black rounded-t-lg p-3">
         <div
             v-for="(message, index) in messages"
             :key="index"
@@ -11,7 +11,7 @@
             :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
         >
           <div
-              class="p-3 max-w-xl text-lg border-2 border-white font-bold rounded-lg bg-black text-white break-words"
+              class="p-3 text-lg border-2 border-white font-bold rounded-lg text-white max-w-full break-words whitespace-pre-wrap bg-gray-950"
           >
             <p>{{ message.text }}</p>
           </div>
@@ -20,7 +20,7 @@
 
       <!-- Message Input Field -->
       <div class="border-t-2 border-white p-4 bg-black rounded-b-lg">
-        <form @submit.prevent="sendMessage" class="flex">
+        <form @submit.prevent="handleSend" class="flex">
           <Input
               v-model="userInput"
               placeholder="Type your message..."
@@ -40,17 +40,36 @@
 </template>
 
 <script setup>
-const messages = ref([])
+import { ref, nextTick, watch } from 'vue'
+
+// useChat is auto-imported from the composables directory
+const { messages, sendMessage } = useChat()
 const userInput = ref('')
+const userId = '12345' // Replace with your actual user ID
 
-async function sendMessage() {
-  if (!userInput.value.trim()) return
+// Reference to the chat container for auto-scrolling
+const chatContainer = ref(null)
 
-  messages.value.push({ text: userInput.value, role: 'user' })
+// Auto-scroll to bottom whenever a new message is added
+watch(
+    messages,
+    async () => {
+      await nextTick()
+      if (chatContainer.value) {
+        chatContainer.value.scrollTop = chatContainer.value.scrollHeight
+      }
+    },
+    { deep: true }
+)
 
-  const simulatedResponse = `Echo: ${userInput.value}`
-  messages.value.push({ text: simulatedResponse, role: 'echo' })
+async function handleSend() {
+  const message = userInput.value.trim()
+  if (!message) return
 
+  // Clear the input immediately
   userInput.value = ''
+
+  // Send the message and update the chat
+  await sendMessage(userId, message)
 }
 </script>

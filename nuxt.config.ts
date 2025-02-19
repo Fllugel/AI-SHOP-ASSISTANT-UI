@@ -13,5 +13,11 @@ export default defineNuxtConfig({
     buildAssetsDir: 'assets',
   },
 
+  runtimeConfig: {
+    public: {
+      apiBase: 'http://localhost:8000',
+    },
+  },
+
   compatibilityDate: '2025-02-15',
 })
