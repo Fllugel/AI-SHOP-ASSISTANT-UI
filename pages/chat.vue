@@ -40,15 +40,28 @@
 </template>
 
 <script setup>
-import { ref, nextTick, watch } from 'vue'
 
 // useChat is auto-imported from the composables directory
 const { messages, sendMessage } = useChat()
 const userInput = ref('')
-const userId = '12345' // Replace with your actual user ID
-
-// Reference to the chat container for auto-scrolling
 const chatContainer = ref(null)
+const userId = ref('')
+
+// Function to generate a random user ID
+function generateUserId() {
+  return 'user-' + Math.random().toString(36).slice(2, 11)
+}
+
+// Set user ID when the component is mounted
+onMounted(() => {
+  const storedUserId = localStorage.getItem('chatUserId')
+  if (storedUserId) {
+    userId.value = storedUserId
+  } else {
+    userId.value = generateUserId()
+    localStorage.setItem('chatUserId', userId.value)
+  }
+})
 
 // Auto-scroll to bottom whenever a new message is added
 watch(
@@ -70,6 +83,6 @@ async function handleSend() {
   userInput.value = ''
 
   // Send the message and update the chat
-  await sendMessage(userId, message)
+  await sendMessage(userId.value, message)
 }
 </script>
