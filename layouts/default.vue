@@ -3,14 +3,14 @@
     <SidebarProvider>
       <Sidebar class="flex border-white flex-col">
         <div>
-          <SidebarHeader class="flex items-center flex-row justify-center border-b-2 border-white">
+          <SidebarHeader class="flex items-center flex-row justify-center border-b ">
             <component :is="AcademicCapIcon" class="mr-2 h-5 w-5" />
             <h1 class="text-2xl font-bold">Store ChatBot</h1>
           </SidebarHeader>
 
           <SidebarGroup>
             <SidebarContent>
-              <div v-for="(item, index) in items" :key="index" class="mb-4 w-full">
+              <div v-for="(item, index) in items" :key="index" class="w-full">
                 <NuxtLink :to="item.link" class="w-full">
                   <Button variant="ghost" class="w-full text-white flex justify-start items-center font-bold px-6 text-lg">
                     <component :is="item.icon" class="mr-4 h-5 w-5" />
