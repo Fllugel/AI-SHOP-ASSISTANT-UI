@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'http://localhost:8000',
+      apiBase: 'https://ai-shop-assistant-production.up.railway.app',
     },
   },
 
