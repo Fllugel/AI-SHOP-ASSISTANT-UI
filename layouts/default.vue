@@ -28,9 +28,10 @@
       </Sidebar>
 
       <SidebarInset>
-        <slot/>
+        <keep-alive>
+          <slot />
+        </keep-alive>
       </SidebarInset>
-
     </SidebarProvider>
   </div>
 </template>
