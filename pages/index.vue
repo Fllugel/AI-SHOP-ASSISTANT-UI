@@ -26,19 +26,6 @@
         The system employs several tools to distribute tasks, with each tool dedicated to a specific function (e.g., product search, providing store information, holiday recommendations). This approach enables the bot to operate quickly, accurately, and flexibly, ensuring a better user experience.
       </p>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-4">Database Information:</h2>
-      <p class="mb-4">The database contains a table that stores product information for the online store. The table includes the following fields:</p>
-      <ul class="list-disc pl-6 mb-6 space-y-2">
-        <li>Product ID - unique identifier of the product;</li>
-        <li>Category - the main category the product belongs to;</li>
-        <li>Sub Category - a more specific classification within the main category;</li>
-        <li>Product Title - the name of the product;</li>
-        <li>Stock Product - the quantity of the product available;</li>
-        <li>Product Price - the price of the product;</li>
-        <li>Product Image - URL link to the product's image;</li>
-        <li>Product URL - URL link to the product's page on the website.</li>
-      </ul>
-
       <h2 class="text-2xl font-semibold mt-8 mb-4">Tools and Capabilities:</h2>
       <ul class="list-disc pl-6 mb-6 space-y-2">
         <li><strong>Product Lookup Tool:</strong> This tool allows users to search for and retrieve detailed information about products available in the store. It enables searching by product ID within the database. If a product is found, the bot returns:</li>
@@ -52,10 +39,18 @@
         <li><strong>Holiday Info Tool:</strong> This tool offers product recommendations tailored to a specific holiday. It can be used to suggest appropriate products for a given festive occasion.</li>
       </ul>
 
-      <h2 class="text-2xl font-semibold mt-8 mb-4">Store ChatBot Overview:</h2>
-      <p class="mb-4">
-        Store ChatBot is designed to enhance the online shopping experience by offering intelligent recommendations and simplifying user interaction with the store.
-      </p>
+      <h2 class="text-2xl font-semibold mt-8 mb-4">Database Information:</h2>
+      <p class="mb-4">The database contains a table that stores product information for the online store. The table includes the following fields:</p>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li>Product ID - unique identifier of the product;</li>
+        <li>Category - the main category the product belongs to;</li>
+        <li>Sub Category - a more specific classification within the main category;</li>
+        <li>Product Title - the name of the product;</li>
+        <li>Stock Product - the quantity of the product available;</li>
+        <li>Product Price - the price of the product;</li>
+        <li>Product Image - URL link to the product's image;</li>
+        <li>Product URL - URL link to the product's page on the website.</li>
+      </ul>
     </section>
 
     <!-- Footer Section -->
