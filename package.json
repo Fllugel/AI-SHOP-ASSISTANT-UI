@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev:local_back": "cross-env NUXT_PUBLIC_API_BASE=http://localhost:8000 nuxt dev",
+    "dev:railway_back": "cross-env NUXT_PUBLIC_API_BASE=https://ai-shop-assistant-production.up.railway.app nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.5.2",
+    "cross-env": "^7.0.3",
     "gh-pages": "^6.3.0",
     "typescript": "^5.7.3"
   }

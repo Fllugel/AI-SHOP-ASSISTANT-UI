@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'https://ai-shop-assistant-production.up.railway.app',
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://ai-shop-assistant-production.up.railway.app',
     },
   },
 
