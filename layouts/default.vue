@@ -31,7 +31,7 @@
       </Sidebar>
 
       <SidebarInset>
-        <SidebarTrigger class="absolute top-5 left-5 z-50 w-10 h-10" />
+        <SidebarTrigger class="absolute top-5 left-5 z-50 w-10 h-10 bg-black border" />
         <keep-alive>
           <slot />
         </keep-alive>
