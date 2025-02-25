@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 py-10">
     <!-- Header Section -->
-    <header class="text-center mb-6">
+    <header class="text-center mb-6 my-5">
       <h1 class="text-5xl font-bold mb-4">Store ChatBot Overview</h1>
       <p class="text-xl">
         Your intelligent assistant for a seamless shopping experience.
