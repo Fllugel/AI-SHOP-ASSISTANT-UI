@@ -33,12 +33,8 @@
 </template>
 
 <script setup>
-import { useChatStore } from '@/stores/chat'
-import { storeToRefs } from 'pinia'
-import { useChat } from '@/composables/useChat'
-
 const chatStore = useChatStore()
-const { messages } = storeToRefs(chatStore) // Sync with Pinia
+const { messages } = storeToRefs(chatStore)
 const { sendMessage } = useChat()
 const userInput = ref('')
 const chatContainer = ref(null)
